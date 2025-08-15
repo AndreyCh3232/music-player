@@ -321,7 +321,7 @@ body {
         min-height: 100dvh;
         align-items: center;
         justify-content: center;
-        padding: 50px;
+        padding: 3px;
 
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
