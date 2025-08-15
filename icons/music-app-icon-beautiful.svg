@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="0.55" stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+    <radialGradient id="g-disc" cx="50%" cy="45%" r="60%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.65"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.06"/>
+    </radialGradient>
+    <linearGradient id="g-note" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#EAEAF2" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="f-glow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 0.60  0 0 0 0 0.50  0 0 0 0 0.98  0 0 0 0.9 0" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="f-inner" x="-20%" y="-20%" width="140%" height="140%">
+      <feOffset dx="0" dy="2"/>
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feComposite in="b" in2="SourceAlpha" operator="out" result="s"/>
+      <feColorMatrix in="s" type="matrix"
+        values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0   0 0 0 0.35 0"/>
+      <feComposite in2="SourceGraphic" operator="atop"/>
+    </filter>
+    <filter id="f-spark" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="0.6"/>
+    </filter>
+  </defs>
+
+  <rect x="64" y="64" width="896" height="896" rx="200" fill="url(#g-bg)" filter="url(#f-inner)"/>
+
+  <g opacity="0.22">
+    <radialGradient id="blob1" cx="25%" cy="20%" r="40%">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob2" cx="80%" cy="80%" r="45%">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <ellipse cx="260" cy="220" rx="220" ry="160" fill="url(#blob1)"/>
+    <ellipse cx="780" cy="820" rx="260" ry="200" fill="url(#blob2)"/>
+  </g>
+
+  <g transform="translate(512,520)">
+    <circle r="280" fill="url(#g-disc)" />
+    <circle r="200" fill="none" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="2"/>
+    <circle r="120" fill="none" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="2"/>
+    <circle r="8" fill="#ffffff" fill-opacity="0.85"/>
+  </g>
+
+  <defs>
+    <mask id="m-play">
+      <rect x="0" y="0" width="1024" height="1024" fill="white"/>
+      <polygon points="470,420 470,620 640,520" fill="black"/>
+    </mask>
+  </defs>
+  <g mask="url(#m-play)">
+    <circle cx="512" cy="520" r="160" fill="#FFFFFF" fill-opacity="0.08"/>
+  </g>
+  <polygon points="470,420 470,620 640,520" fill="#ffffff" fill-opacity="0.95" filter="url(#f-glow)"/>
+
+  <g filter="url(#f-glow)">
+    <path d="M630 350v240c0 49-40 89-89 89-29 0-55-14-71-36-14 22-39 36-67 36-46 0-83-37-83-83s37-83 83-83c23 0 43 9 58 23V404c0-10 7-19 17-21l136-28c11-2 16 6 16 16z"
+          fill="url(#g-note)"/>
+  </g>
+
+  <g opacity="0.92">
+    <rect x="230" y="690" width="28" height="110" rx="14" fill="#FFFFFF" fill-opacity="0.55"/>
+    <rect x="288" y="660" width="28" height="140" rx="14" fill="#FFFFFF" fill-opacity="0.70"/>
+    <rect x="346" y="710" width="28" height="90"  rx="14" fill="#FFFFFF" fill-opacity="0.55"/>
+    <rect x="404" y="668" width="28" height="132" rx="14" fill="#FFFFFF" fill-opacity="0.80"/>
+  </g>
+
+  <g fill="#fff" opacity="0.9" filter="url(#f-spark)">
+    <circle cx="770" cy="260" r="2.2"/>
+    <circle cx="820" cy="300" r="1.8"/>
+    <circle cx="720" cy="320" r="1.6"/>
+  </g>
+
+  <rect x="64.5" y="64.5" width="895" height="895" rx="199.5"
+        stroke="#FFFFFF" stroke-opacity="0.14" fill="none"/>
+</svg>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="grid" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#06b6d4" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="64" fill="url(#sky)"/>
+  <g transform="translate(512,420)">
+    <circle r="180" fill="url(#sun)" />
+    <g stroke="#111827" stroke-opacity="0.35" stroke-width="16">
+      <line x1="-190" x2="190" y1="-120" y2="-120"/>
+      <line x1="-210" x2="210" y1="-70" y2="-70"/>
+      <line x1="-220" x2="220" y1="-20" y2="-20"/>
+      <line x1="-230" x2="230" y1="30" y2="30"/>
+      <line x1="-220" x2="220" y1="80" y2="80"/>
+    </g>
+  </g>
+  <g fill="#111827">
+    <path d="M0 670 L160 560 L250 620 L360 520 L520 670 Z" opacity="0.8"/>
+    <path d="M420 700 L560 560 L650 630 L760 520 L1024 720 L1024 1024 L0 1024 L0 760 Z" opacity="0.95"/>
+  </g>
+  <g transform="translate(0,740)" stroke="url(#grid)" stroke-width="2">
+    <g opacity="0.6">
+      <path d="M0 0 C 256 40, 512 40, 1024 0"/>
+      <path d="M0 40 C 256 70, 512 70, 1024 40"/>
+      <path d="M0 80 C 256 95, 512 95, 1024 80"/>
+      <path d="M0 120 C 256 130, 512 130, 1024 120"/>
+    </g>
+    <g opacity="0.6">
+      <line x1="64" x2="64" y1="0" y2="284"/>
+      <line x1="192" x2="192" y1="0" y2="284"/>
+      <line x1="320" x2="320" y1="0" y2="284"/>
+      <line x1="448" x2="448" y1="0" y2="284"/>
+      <line x1="576" x2="576" y1="0" y2="284"/>
+      <line x1="704" x2="704" y1="0" y2="284"/>
+      <line x1="832" x2="832" y1="0" y2="284"/>
+      <line x1="960" x2="960" y1="0" y2="284"/>
+    </g>
+  </g>
+  <g font-family="Segoe UI, Arial, sans-serif" fill="#fff">
+    <text x="64" y="160" font-size="72" font-weight="800" letter-spacing="2">RETRO SUN</text>
+    <text x="64" y="220" font-size="28" fill="#e5e7eb" opacity="0.9">Music Cover • 02</text>
+  </g>
+</svg>

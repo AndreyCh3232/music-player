@@ -1,0 +1,341 @@
+:root {
+    --bg1: #1f1147;
+    --bg2: #0f0c29;
+    --card: #1f1f29cc;
+    --primary: #8b5cf6;
+    --primary-2: #6d28d9;
+    --text: #f5f7ff;
+    --muted: #b7b9c9;
+    --ring: #a78bfa;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    color: var(--text);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary);
+    gap: .55rem;
+    margin: 0 0;
+    white-space: nowrap;
+    font-size: clamp(2.25rem, 2vw + 1rem, 2rem);
+    letter-spacing: .5px;
+}
+
+.brand__icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+    flex: 0 0 auto;
+}
+
+.bg {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(1200px 800px at 80% -10%, #7c3aed33, transparent 60%),
+        radial-gradient(800px 600px at 0% 100%, #06b6d433, transparent 60%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+    filter: saturate(1.1);
+    z-index: -1;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.player {
+    width: min(420px, 92vw);
+    background: var(--card);
+    margin: 50px 0;
+    backdrop-filter: blur(14px);
+    border: 1px solid #ffffff1a;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px #0006, inset 0 1px 0 #ffffff22;
+    padding: 22px 22px 18px;
+}
+
+.cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px #0008;
+    margin-bottom: 14px;
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.title {
+    margin: 8px 2px 14px;
+    font-weight: 700;
+    letter-spacing: .2px;
+    text-align: center;
+}
+
+.time-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: .9rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+/* Progress */
+#progress {
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-2));
+    outline: none;
+    margin: 0 0 18px;
+    position: relative;
+    cursor: pointer;
+}
+
+#progress::-webkit-slider-runnable-track {
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-2));
+}
+
+#progress::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    margin-top: -4px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--ring);
+    box-shadow: 0 2px 8px #0006;
+}
+
+#progress::-moz-range-track {
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-2));
+}
+
+#progress::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #2a2a36;
+    border: 1px solid #ffffff1f;
+    color: #fff;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    box-shadow: 0 6px 14px #0006, inset 0 1px 0 #ffffff1c;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    background: #343444;
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px #0007;
+}
+
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px #ffffff33, 0 0 0 6px var(--ring);
+}
+
+.btn .icon {
+    width: 26px;
+    height: 26px;
+    display: block;
+}
+
+.btn-primary {
+    background: radial-gradient(120% 120% at 30% 30%, #ffffff22, transparent 60%),
+        linear-gradient(135deg, var(--primary), var(--primary-2));
+    border-color: #ffffff22;
+}
+
+.btn-primary:hover {
+    filter: saturate(1.1) brightness(1.03);
+}
+
+/* Volume */
+.volume-row {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 5px;
+    color: var(--muted);
+}
+
+.vol-wrap {
+    position: relative;
+    flex: 1;
+}
+
+.vol-tip {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    margin-left: 39px;
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 1;
+    background: #111;
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px #0007;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, 0) scale(.96);
+    transition: opacity .12s ease, transform .12s ease;
+}
+
+.vol-tip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #111;
+}
+
+.vol-tip.show {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+}
+
+
+.vol-ico {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    user-select: none;
+    color: var(--muted);
+    transition: background .15s ease, color .15s ease;
+}
+
+.vol-ico:hover {
+    background: #ffffff14;
+    color: #fff;
+}
+
+.vol-ico:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px #ffffff33, 0 0 0 6px var(--ring);
+}
+
+.vol-ico .icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+#volume {
+    appearance: none;
+    cursor: pointer;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background:
+        linear-gradient(90deg, var(--primary), var(--primary-2)) 0 / var(--vol, 100%) 100% no-repeat,
+        #ffffff22;
+}
+
+#volume::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--ring);
+}
+
+#volume::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+}
+
+@media (max-width: 430px) and (orientation: portrait),
+(max-height: 430px) and (orientation: landscape) {
+
+    html,
+    body {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100dvh;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+    }
+
+    @supports not (height: 100dvh) {
+        body {
+            min-height: 100vh;
+        }
+    }
+
+    .player {
+        width: min(520px, 94vw);
+        margin: 0, auto;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .btn .icon {
+        width: 22px;
+        height: 22px;
+    }
+}
