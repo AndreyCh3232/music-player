@@ -307,7 +307,13 @@ body {
     html,
     body {
         height: 100%;
-        overflow: hidden;
+    }
+
+    html {
+        overflow-x: hidden;
+        overflow-y: auto;
+        scrollbar-gutter: stable both-edges;
+        overscroll-behavior-x: none;
     }
 
     body {
@@ -316,6 +322,10 @@ body {
         align-items: center;
         justify-content: center;
         padding: 50px;
+
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
     }
 
     @supports not (height: 100dvh) {
@@ -326,7 +336,7 @@ body {
 
     .player {
         width: min(520px, 94vw);
-        margin: 0, auto;
+        margin: 0 auto;
     }
 
     .btn {
